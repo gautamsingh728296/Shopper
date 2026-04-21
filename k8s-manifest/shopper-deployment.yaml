@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: shopper
+  name: shopper
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shopper
+  template:
+    metadata:
+      labels:
+        app: shopper
+    spec:
+      containers:
+      - image: shopper-main-frontend
+        name: shopper
+        ports:
+        - containerPort: 80
+          name: shopper
