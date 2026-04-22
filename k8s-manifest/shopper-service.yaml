@@ -1,16 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    app: shopper
   name: shopper
 spec:
   type: NodePort
-  ports:
-  - name: "shopper-service"
-    port: 5000
-    targetPort: 80
-    nodePort: 31002
   selector:
     app: shopper
-  
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30007
