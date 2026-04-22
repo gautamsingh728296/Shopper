@@ -14,9 +14,11 @@ spec:
       labels:
         app: shopper
     spec:
+      imagePullSecrets:        # 🔥 ADD THIS
+        - name: ecr-secret
+
       containers:
-      - image: 437928576289.dkr.ecr.ap-south-1.amazonaws.com/shopper-frontend:latest
-        name: shopper
-        ports:
-        - containerPort: 80
-          name: shopper
+        - name: shopper
+          image: 437928576289.dkr.ecr.ap-south-1.amazonaws.com/shopper-frontend:latest
+          ports:
+            - containerPort: 80
