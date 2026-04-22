@@ -15,7 +15,7 @@ spec:
         app: shopper
     spec:
       containers:
-      - image: shopper-main-frontend
+      - image: 437928576289.dkr.ecr.ap-south-1.amazonaws.com/shopper-frontend:latest
         name: shopper
         ports:
         - containerPort: 80
